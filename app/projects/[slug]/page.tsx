@@ -42,7 +42,7 @@ export default async function ProjectPage({ params }: Props) {
       {/* Header */}
       <header className="mb-12">
         {/* Tags + year */}
-        {(tags?.length > 0 || year) && (
+        {((tags && tags.length > 0) || year) && (
           <div className="flex items-center gap-2 mb-5">
             {tags && tags.length > 0 && (
               <span className="text-xs uppercase tracking-widest text-[#888888]">
