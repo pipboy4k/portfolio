@@ -30,39 +30,41 @@ export default async function ProjectPage({ params }: Props) {
   const { title, year, tags, summary, coverImage, body, gallery, externalLink } = project
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16">
+    <main className="max-w-3xl mx-auto px-6 py-20">
       {/* Back link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors mb-12"
+        className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors mb-16"
       >
         ← Back
       </Link>
 
       {/* Header */}
-      <header className="mb-10">
-        <div className="flex items-center gap-3 mb-4">
-          <span className="text-sm text-neutral-500">{year}</span>
-          {tags && tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs px-3 py-1 rounded-full bg-neutral-100 text-neutral-600"
-            >
-              {tag}
+      <header className="mb-12">
+        <div className="flex items-center gap-2 mb-4">
+          {tags && tags.length > 0 && (
+            <span className="text-sm text-neutral-500">
+              {tags.join(', ')}
             </span>
-          ))}
+          )}
+          {year && tags && tags.length > 0 && (
+            <span className="text-sm text-neutral-300">·</span>
+          )}
+          {year && (
+            <span className="text-sm text-neutral-500">{year}</span>
+          )}
         </div>
-        <h1 className="text-4xl md:text-5xl font-medium tracking-tight text-neutral-900 mb-4">
+        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-neutral-900 mb-6">
           {title}
         </h1>
-        <p className="text-lg text-neutral-600 leading-relaxed">{summary}</p>
+        <p className="text-xl text-neutral-600 leading-relaxed">{summary}</p>
 
         {externalLink && (
           <a
             href={externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-4 text-sm text-neutral-900 underline hover:text-neutral-600 transition-colors"
+            className="inline-flex items-center gap-2 mt-6 text-sm text-neutral-900 underline hover:text-neutral-600 transition-colors"
           >
             View live project ↗
           </a>
@@ -71,7 +73,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Cover image */}
       {coverImage?.asset?.url && (
-        <div className="rounded-2xl overflow-hidden mb-12 bg-neutral-100">
+        <div className="mb-16 overflow-hidden">
           <Image
             src={coverImage.asset.url}
             alt={coverImage.alt || title}
@@ -85,26 +87,24 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Case study body */}
       {body && (
-        <div className="prose prose-neutral max-w-none mb-16">
+        <div className="project-body mb-20">
           <PortableText
             value={body}
             components={{
               types: {
                 image: ({ value }) => (
-                  <figure className="my-8">
+                  <figure className="my-12">
                     {value?.asset?.url && (
-                      <div className="rounded-xl overflow-hidden bg-neutral-100">
-                        <Image
-                          src={value.asset.url}
-                          alt={value.alt || ''}
-                          width={value.asset.metadata?.dimensions?.width || 1200}
-                          height={value.asset.metadata?.dimensions?.height || 800}
-                          className="w-full h-auto"
-                        />
-                      </div>
+                      <Image
+                        src={value.asset.url}
+                        alt={value.alt || ''}
+                        width={value.asset.metadata?.dimensions?.width || 1200}
+                        height={value.asset.metadata?.dimensions?.height || 800}
+                        className="w-full h-auto"
+                      />
                     )}
                     {value?.caption && (
-                      <figcaption className="text-sm text-neutral-500 mt-2 text-center">
+                      <figcaption className="text-sm text-neutral-500 mt-3">
                         {value.caption}
                       </figcaption>
                     )}
@@ -118,23 +118,20 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Gallery */}
       {gallery && gallery.length > 0 && (
-        <section className="mb-16">
-          <h2 className="text-sm uppercase tracking-widest text-neutral-500 mb-6">Gallery</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {gallery.map((image, i) => (
-              image?.asset?.url && (
-                <div key={i} className="rounded-xl overflow-hidden bg-neutral-100">
-                  <Image
-                    src={image.asset.url}
-                    alt={image.alt || `Gallery image ${i + 1}`}
-                    width={image.asset.metadata?.dimensions?.width || 800}
-                    height={image.asset.metadata?.dimensions?.height || 600}
-                    className="w-full h-auto"
-                  />
-                </div>
-              )
-            ))}
-          </div>
+        <section className="mb-20 flex flex-col gap-6">
+          {gallery.map((image, i) => (
+            image?.asset?.url && (
+              <div key={i} className="overflow-hidden">
+                <Image
+                  src={image.asset.url}
+                  alt={image.alt || `Gallery image ${i + 1}`}
+                  width={image.asset.metadata?.dimensions?.width || 800}
+                  height={image.asset.metadata?.dimensions?.height || 600}
+                  className="w-full h-auto"
+                />
+              </div>
+            )
+          ))}
         </section>
       )}
 

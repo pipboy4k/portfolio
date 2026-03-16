@@ -17,3 +17,58 @@ body {
   font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+/* Project case study body typography */
+.project-body p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 1.5rem;
+}
+
+.project-body h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0a0a0a;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.project-body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #0a0a0a;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-body ul,
+.project-body ol {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.project-body ul {
+  list-style-type: disc;
+}
+
+.project-body ol {
+  list-style-type: decimal;
+}
+
+.project-body strong {
+  font-weight: 600;
+  color: #0a0a0a;
+}
+
+.project-body a {
+  text-decoration: underline;
+  color: #0a0a0a;
+}
+
+.project-body a:hover {
+  color: #666666;
+}
