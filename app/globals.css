@@ -15,38 +15,41 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
   -webkit-font-smoothing: antialiased;
 }
 
 /* Project case study body typography */
 .project-body p {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #666666;
-  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 1.75rem;
 }
 
 .project-body h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: #0a0a0a;
   margin-top: 3.5rem;
   margin-bottom: 1rem;
+  letter-spacing: -0.02em;
 }
 
 .project-body h2 {
-  font-size: 1.5rem;
+  font-size: 1.375rem;
   font-weight: 700;
   color: #0a0a0a;
   margin-top: 3rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.01em;
 }
 
 .project-body h3 {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #0a0a0a;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.75rem;
 }
 
@@ -54,16 +57,16 @@ body {
   font-size: 1rem;
   font-weight: 600;
   color: #0a0a0a;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
 }
 
 .project-body ul,
 .project-body ol {
   font-size: 1rem;
-  line-height: 1.7;
-  color: #666666;
-  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: #444444;
+  margin-bottom: 1.75rem;
   padding-left: 1.5rem;
 }
 
@@ -75,6 +78,10 @@ body {
   list-style-type: decimal;
 }
 
+.project-body li {
+  margin-bottom: 0.375rem;
+}
+
 .project-body strong {
   font-weight: 600;
   color: #0a0a0a;
@@ -83,8 +90,17 @@ body {
 .project-body a {
   text-decoration: underline;
   color: #0a0a0a;
+  text-underline-offset: 2px;
 }
 
 .project-body a:hover {
   color: #666666;
+}
+
+.project-body blockquote {
+  border-left: 2px solid #e5e5e5;
+  padding-left: 1.25rem;
+  margin: 2rem 0;
+  color: #666666;
+  font-style: italic;
 }

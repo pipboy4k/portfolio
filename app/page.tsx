@@ -16,7 +16,7 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="max-w-[960px] mx-auto px-6">
+    <main>
       <HeroIntro />
 
       <section className="pb-24">

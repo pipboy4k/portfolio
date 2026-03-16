@@ -3,7 +3,7 @@ export default function HeroIntro() {
     <>
       {/* Top nav */}
       <header className="py-6 flex items-center gap-2">
-        <span className="text-sm font-bold text-[#0a0a0a]">Your Name</span>
+        <span className="text-sm font-bold text-[#0a0a0a]">Ihor Kochetov</span>
         <span className="text-sm text-[#888888]">✳ Product designer</span>
       </header>
 
@@ -11,40 +11,37 @@ export default function HeroIntro() {
       <section className="pt-12 pb-10">
         <p className="text-[2.75rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
           Currently leading the Design System Team at{' '}
-          <span className="text-[#888888]">Company A.</span>{' '}
+          <span className="text-[#888888]">Transcenda.</span>{' '}
           Before that Lead Product Designer at{' '}
-          <span className="text-[#888888]">Company B</span>{' '}
+          <span className="text-[#888888]">JustAnswer</span>{' '}
           and Experience Designer at{' '}
-          <span className="text-[#888888]">Company C</span>{' '}
+          <span className="text-[#888888]">SoftServe</span>{' '}
           working with complex B2B and B2C products
         </p>
 
         {/* Contact bar */}
-        <div className="flex items-center border border-[#e5e5e5] rounded-xl overflow-hidden">
+        <div className="flex items-center justify-between border-t border-b border-[#e5e5e5]">
           <a
-            href="mailto:your@email.com"
-            className="flex-1 text-center py-3.5 text-sm text-[#0a0a0a] hover:bg-[#f5f5f5] transition-colors"
+            href="mailto:ihor.kochetov@gmail.com"
+            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
-            your@email.com
+            ihor.kochetov@gmail.com
           </a>
-          <div className="w-px h-10 bg-[#e5e5e5]" />
           <a
             href="#"
-            className="flex-1 text-center py-3.5 text-sm text-[#0a0a0a] hover:bg-[#f5f5f5] transition-colors"
+            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             instagram
           </a>
-          <div className="w-px h-10 bg-[#e5e5e5]" />
           <a
             href="#"
-            className="flex-1 text-center py-3.5 text-sm text-[#0a0a0a] hover:bg-[#f5f5f5] transition-colors"
+            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             linkedin
           </a>
-          <div className="w-px h-10 bg-[#e5e5e5]" />
           <a
             href="#"
-            className="flex-1 text-center py-3.5 text-sm text-[#0a0a0a] hover:bg-[#f5f5f5] transition-colors"
+            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             CV
           </a>

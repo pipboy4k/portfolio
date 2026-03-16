@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Card content */}
       <div className="px-6 py-6">
-        <h2 className="text-lg font-bold text-[#0a0a0a] mb-3">
+        <h2 className="text-base font-bold text-[#0a0a0a] mb-3">
           {title} →
         </h2>
         <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>

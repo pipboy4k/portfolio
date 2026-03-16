@@ -30,50 +30,55 @@ export default async function ProjectPage({ params }: Props) {
   const { title, year, tags, summary, coverImage, body, gallery, externalLink } = project
 
   return (
-    <main className="max-w-3xl mx-auto px-6 py-20">
+    <main className="py-16">
       {/* Back link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-2 text-sm text-neutral-500 hover:text-neutral-900 transition-colors mb-16"
+        className="inline-flex items-center gap-1.5 text-sm text-[#888888] hover:text-[#0a0a0a] transition-colors mb-16"
       >
         ← Back
       </Link>
 
       {/* Header */}
       <header className="mb-12">
-        <div className="flex items-center gap-2 mb-4">
-          {tags && tags.length > 0 && (
-            <span className="text-sm text-neutral-500">
-              {tags.join(', ')}
-            </span>
-          )}
-          {year && tags && tags.length > 0 && (
-            <span className="text-sm text-neutral-300">·</span>
-          )}
-          {year && (
-            <span className="text-sm text-neutral-500">{year}</span>
-          )}
-        </div>
-        <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-neutral-900 mb-6">
+        {/* Tags + year */}
+        {(tags?.length > 0 || year) && (
+          <div className="flex items-center gap-2 mb-5">
+            {tags && tags.length > 0 && (
+              <span className="text-xs uppercase tracking-widest text-[#888888]">
+                {tags.join(', ')}
+              </span>
+            )}
+            {year && tags?.length > 0 && (
+              <span className="text-xs text-[#cccccc]">·</span>
+            )}
+            {year && (
+              <span className="text-xs uppercase tracking-widest text-[#888888]">{year}</span>
+            )}
+          </div>
+        )}
+
+        <h1 className="text-4xl font-bold tracking-tight text-[#0a0a0a] leading-[1.15] mb-5">
           {title}
         </h1>
-        <p className="text-xl text-neutral-600 leading-relaxed">{summary}</p>
+
+        <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>
 
         {externalLink && (
           <a
             href={externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 mt-6 text-sm text-neutral-900 underline hover:text-neutral-600 transition-colors"
+            className="inline-flex items-center gap-1.5 mt-5 text-sm text-[#0a0a0a] underline underline-offset-2 hover:text-[#666666] transition-colors"
           >
             View live project ↗
           </a>
         )}
       </header>
 
-      {/* Cover image */}
+      {/* Cover image — full width, no border radius */}
       {coverImage?.asset?.url && (
-        <div className="mb-16 overflow-hidden">
+        <div className="mb-16 -mx-6">
           <Image
             src={coverImage.asset.url}
             alt={coverImage.alt || title}
@@ -93,7 +98,7 @@ export default async function ProjectPage({ params }: Props) {
             components={{
               types: {
                 image: ({ value }) => (
-                  <figure className="my-12">
+                  <figure className="my-12 -mx-6">
                     {value?.asset?.url && (
                       <Image
                         src={value.asset.url}
@@ -104,7 +109,7 @@ export default async function ProjectPage({ params }: Props) {
                       />
                     )}
                     {value?.caption && (
-                      <figcaption className="text-sm text-neutral-500 mt-3">
+                      <figcaption className="text-sm text-[#888888] mt-3 px-6">
                         {value.caption}
                       </figcaption>
                     )}
@@ -116,12 +121,12 @@ export default async function ProjectPage({ params }: Props) {
         </div>
       )}
 
-      {/* Gallery */}
+      {/* Gallery — single column, no heading */}
       {gallery && gallery.length > 0 && (
-        <section className="mb-20 flex flex-col gap-6">
+        <section className="mb-20 flex flex-col gap-4 -mx-6">
           {gallery.map((image, i) => (
             image?.asset?.url && (
-              <div key={i} className="overflow-hidden">
+              <div key={i}>
                 <Image
                   src={image.asset.url}
                   alt={image.alt || `Gallery image ${i + 1}`}
@@ -136,10 +141,10 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* Footer nav */}
-      <div className="border-t border-neutral-200 pt-8">
+      <div className="border-t border-[#e5e5e5] pt-8">
         <Link
           href="/"
-          className="text-sm text-neutral-500 hover:text-neutral-900 transition-colors"
+          className="text-sm text-[#888888] hover:text-[#0a0a0a] transition-colors"
         >
           ← All projects
         </Link>
