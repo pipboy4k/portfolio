@@ -20,9 +20,9 @@ body {
 
 /* Project case study body typography */
 .project-body p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #444444;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666666;
   margin-bottom: 1.5rem;
 }
 
@@ -60,9 +60,9 @@ body {
 
 .project-body ul,
 .project-body ol {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  color: #444444;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #666666;
   margin-bottom: 1.5rem;
   padding-left: 1.5rem;
 }
