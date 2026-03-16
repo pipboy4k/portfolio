@@ -49,7 +49,7 @@ export default async function ProjectPage({ params }: Props) {
                 {tags.join(', ')}
               </span>
             )}
-            {year && tags?.length > 0 && (
+            {year && tags && tags.length > 0 && (
               <span className="text-xs text-[#cccccc]">·</span>
             )}
             {year && (
