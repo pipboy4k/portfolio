@@ -30,7 +30,7 @@ export default async function ProjectPage({ params }: Props) {
   const { title, year, tags, summary, coverImage, body, gallery, externalLink } = project
 
   return (
-    <main className="py-16">
+    <main className="max-w-[720px] mx-auto px-6 py-16">
       {/* Back link */}
       <Link
         href="/"
