@@ -58,7 +58,7 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         )}
 
-        <h1 className="text-4xl font-bold tracking-tight text-[#0a0a0a] leading-[1.15] mb-5">
+        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#0a0a0a] leading-[1.15] mb-5">
           {title}
         </h1>
 

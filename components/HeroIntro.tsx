@@ -9,7 +9,7 @@ export default function HeroIntro() {
 
       {/* Hero */}
       <section className="pt-12 pb-10">
-        <p className="text-[2rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
+        <p className="text-[1.5rem] sm:text-[2rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
           Currently leading the Design System Team at{' '}
           <span className="text-[#888888]">Transcenda.</span>{' '}
           Before that Lead Product Designer at{' '}
@@ -20,28 +20,28 @@ export default function HeroIntro() {
         </p>
 
         {/* Contact bar */}
-        <div className="flex items-center justify-between border-t border-b border-[#e5e5e5]">
+        <div className="flex flex-wrap items-center justify-between gap-y-0 border-t border-b border-[#e5e5e5]">
           <a
             href="mailto:ihor.kochetov@gmail.com"
-            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             ihor.kochetov@gmail.com
           </a>
           <a
             href="#"
-            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             instagram
           </a>
           <a
             href="#"
-            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             linkedin
           </a>
           <a
             href="#"
-            className="py-3.5 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             CV
           </a>

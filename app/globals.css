@@ -108,3 +108,32 @@ body {
   color: #666666;
   font-style: italic;
 }
+
+/* Responsive typography — mobile */
+@media (max-width: 640px) {
+  .project-body h1 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .project-body h2 {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+  }
+
+  .project-body h3 {
+    font-size: 1.125rem;
+    margin-top: 1.75rem;
+  }
+
+  .project-body h4 {
+    font-size: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-body p,
+  .project-body ul,
+  .project-body ol {
+    font-size: 0.9375rem;
+  }
+}
