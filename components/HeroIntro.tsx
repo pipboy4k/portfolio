@@ -20,28 +20,28 @@ export default function HeroIntro() {
         </p>
 
         {/* Contact bar */}
-        <div className="flex flex-wrap items-center justify-between gap-y-0 border-t border-b border-[#e5e5e5]">
+        <div className="bg-[#f5f5f5] rounded-2xl px-6 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
           <a
             href="mailto:ihor.kochetov@gmail.com"
-            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             ihor.kochetov@gmail.com
           </a>
           <a
             href="#"
-            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             instagram
           </a>
           <a
             href="#"
-            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             linkedin
           </a>
           <a
             href="#"
-            className="py-3.5 text-xs sm:text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             CV
           </a>
