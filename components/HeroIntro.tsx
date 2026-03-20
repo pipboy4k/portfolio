@@ -9,7 +9,7 @@ export default function HeroIntro() {
 
       {/* Hero */}
       <section className="pt-12 pb-10">
-        <p className="text-[2.75rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
+        <p className="text-[2rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
           Currently leading the Design System Team at{' '}
           <span className="text-[#888888]">Transcenda.</span>{' '}
           Before that Lead Product Designer at{' '}

@@ -28,6 +28,27 @@ export default defineType({
       validation: (Rule) => Rule.required().min(2000).max(2099),
     }),
     defineField({
+      name: 'cardDescription',
+      title: 'Card Description',
+      type: 'text',
+      rows: 3,
+      description: 'Text shown on the homepage project card. If not set, Summary is used.',
+    }),
+    defineField({
+      name: 'cardImage',
+      title: 'Card Image',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'Image shown on the homepage project card. If not set, Cover Image is used.',
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
       name: 'tags',
       title: 'Tags',
       type: 'array',
@@ -43,13 +64,6 @@ export default defineType({
       rows: 3,
       description: 'Short description shown on the project card.',
       validation: (Rule) => Rule.required().max(300),
-    }),
-    defineField({
-      name: 'cardDescription',
-      title: 'Card Description',
-      type: 'text',
-      rows: 3,
-      description: 'Text shown on the homepage project card. If not set, Summary is used.',
     }),
     defineField({
       name: 'storeLinks',
@@ -89,20 +103,6 @@ export default defineType({
             },
           },
         },
-      ],
-    }),
-    defineField({
-      name: 'cardImage',
-      title: 'Card Image',
-      type: 'image',
-      options: { hotspot: true },
-      description: 'Image shown on the homepage project card. If not set, Cover Image is used.',
-      fields: [
-        defineField({
-          name: 'alt',
-          title: 'Alt Text',
-          type: 'string',
-        }),
       ],
     }),
     defineField({
