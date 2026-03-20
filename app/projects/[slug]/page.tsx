@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
 import { client } from '@/sanity/lib/client'
 import { getProjectBySlugQuery, getAllProjectSlugsQuery } from '@/sanity/lib/queries'
-import { ProjectDetail } from '@/types'
+import { ProjectDetail, StoreLink } from '@/types'
 
 export const revalidate = 60
 
@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const { title, year, tags, summary, coverImage, body, gallery, externalLink } = project
+  const { title, year, tags, summary, coverImage, body, gallery, externalLink, storeLinks } = project
 
   return (
     <main className="max-w-[720px] mx-auto px-6 py-16">
@@ -64,7 +64,44 @@ export default async function ProjectPage({ params }: Props) {
 
         <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>
 
-        {externalLink && (
+        {storeLinks && storeLinks.length > 0 && (
+          <div className="flex flex-wrap gap-3 mt-6">
+            {storeLinks.map((link: StoreLink, i: number) => (
+              <a
+                key={i}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 bg-[#0a0a0a] text-white px-5 py-3 rounded-xl hover:bg-[#333] transition-colors"
+              >
+                {link.type === 'appStore' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                  </svg>
+                )}
+                {link.type === 'googlePlay' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.18 23.76c.3.17.64.22.99.16l12.6-7.27-2.79-2.79-10.8 9.9zM.54 1.03C.2 1.38 0 1.94 0 2.67v18.66c0 .73.2 1.29.54 1.64l.09.08 10.46-10.46v-.25L.63.95l-.09.08zM20.37 10.43l-2.97-1.71-3.12 3.12 3.12 3.12 2.98-1.72c.85-.49.85-1.29 0-1.81zM4.17.24l12.6 7.27-2.79 2.79L3.18.4c.35-.06.69-.01.99.16z"/>
+                  </svg>
+                )}
+                {link.type === 'web' && (
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                  </svg>
+                )}
+                <span className="text-sm font-medium">
+                  {link.type === 'appStore' && 'Download on the App Store'}
+                  {link.type === 'googlePlay' && 'Get it on Google Play'}
+                  {link.type === 'web' && 'View on Web'}
+                </span>
+              </a>
+            ))}
+          </div>
+        )}
+
+        {externalLink && !storeLinks?.length && (
           <a
             href={externalLink}
             target="_blank"

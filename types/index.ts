@@ -24,7 +24,13 @@ export interface Project {
   externalLink?: string
 }
 
+export interface StoreLink {
+  type: 'appStore' | 'googlePlay' | 'web'
+  url: string
+}
+
 export interface ProjectDetail extends Project {
   body?: Array<{ _type: string; [key: string]: unknown }>
   gallery?: SanityImage[]
+  storeLinks?: StoreLink[]
 }

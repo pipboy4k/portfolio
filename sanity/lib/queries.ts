@@ -28,6 +28,7 @@ export const getProjectBySlugQuery = groq`
       asset->,
       alt
     },
+    storeLinks,
     body[] {
       ...,
       _type == "image" => {
