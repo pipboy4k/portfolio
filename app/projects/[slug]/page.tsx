@@ -92,9 +92,17 @@ export default async function ProjectPage({ params }: Props) {
                   </svg>
                 )}
                 <span className="text-sm font-medium">
-                  {link.type === 'appStore' && 'Download on the App Store'}
-                  {link.type === 'googlePlay' && 'Get it on Google Play'}
-                  {link.type === 'web' && 'View on Web'}
+                  {link.type === 'appStore' && 'App Store'}
+                  {link.type === 'googlePlay' && 'Google Play'}
+                  {link.type === 'web' && (() => {
+                    try {
+                      const host = new URL(link.url).hostname.replace(/^www\./, '')
+                      const name = host.split('.')[0]
+                      return name.charAt(0).toUpperCase() + name.slice(1)
+                    } catch {
+                      return 'Web'
+                    }
+                  })()}
                 </span>
               </a>
             ))}
