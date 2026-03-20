@@ -31,8 +31,15 @@ export interface StoreLink {
   url: string
 }
 
+export interface MetadataItem {
+  _key: string
+  label: string
+  value: string
+}
+
 export interface ProjectDetail extends Project {
   body?: Array<{ _type: string; [key: string]: unknown }>
   gallery?: SanityImage[]
   storeLinks?: StoreLink[]
+  metadata?: MetadataItem[]
 }

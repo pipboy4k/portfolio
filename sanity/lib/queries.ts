@@ -34,6 +34,7 @@ export const getProjectBySlugQuery = groq`
       alt
     },
     storeLinks,
+    metadata,
     body[] {
       ...,
       _type == "image" => {

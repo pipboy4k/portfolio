@@ -106,6 +106,35 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'metadata',
+      title: 'Project Metadata',
+      type: 'array',
+      description: 'Key details shown under the cover image (e.g. My role, Team, Timeline, Platform)',
+      of: [
+        {
+          type: 'object',
+          name: 'metadataItem',
+          fields: [
+            defineField({
+              name: 'label',
+              title: 'Label',
+              type: 'string',
+              description: 'e.g. My role, Team, Timeline, Platform',
+            }),
+            defineField({
+              name: 'value',
+              title: 'Value',
+              type: 'text',
+              rows: 2,
+            }),
+          ],
+          preview: {
+            select: { title: 'label', subtitle: 'value' },
+          },
+        },
+      ],
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',

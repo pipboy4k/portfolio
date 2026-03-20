@@ -27,7 +27,7 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const { title, year, tags, summary, coverImage, body, gallery, externalLink, storeLinks } = project
+  const { title, year, tags, summary, coverImage, body, gallery, externalLink, storeLinks, metadata } = project
 
   return (
     <main className="max-w-[720px] mx-auto px-6 py-16">
@@ -131,6 +131,18 @@ export default async function ProjectPage({ params }: Props) {
             className="w-full h-auto"
             priority
           />
+        </div>
+      )}
+
+      {/* Metadata block */}
+      {metadata && metadata.length > 0 && (
+        <div className="mb-16 bg-[#f5f5f5] rounded-2xl px-6 py-5">
+          {metadata.map((item) => (
+            <div key={item._key} className="flex flex-col sm:flex-row sm:gap-8 py-2">
+              <span className="text-sm font-bold text-[#0a0a0a] sm:w-28 sm:shrink-0">{item.label}</span>
+              <span className="text-sm text-[#666666] leading-[1.6]">{item.value}</span>
+            </div>
+          ))}
         </div>
       )}
 
