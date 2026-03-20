@@ -7,21 +7,22 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { title, slug, summary, coverImage } = project
+  const { title, slug, summary, cardImage, coverImage } = project
+  const previewImage = cardImage?.asset?.url ? cardImage : coverImage
 
   return (
     <Link
       href={`/projects/${slug.current}`}
       className="group block rounded-2xl overflow-hidden bg-[#f5f5f5] hover:bg-[#eeeeee] transition-colors duration-300"
     >
-      {/* Cover image */}
-      {coverImage?.asset?.url && (
+      {/* Card image (falls back to cover image) */}
+      {previewImage?.asset?.url && (
         <div className="w-full overflow-hidden">
           <Image
-            src={coverImage.asset.url}
-            alt={coverImage.alt || title}
-            width={coverImage.asset.metadata?.dimensions?.width || 960}
-            height={coverImage.asset.metadata?.dimensions?.height || 600}
+            src={previewImage.asset.url}
+            alt={previewImage.alt || title}
+            width={previewImage.asset.metadata?.dimensions?.width || 960}
+            height={previewImage.asset.metadata?.dimensions?.height || 600}
             className="w-full h-auto"
           />
         </div>
@@ -29,7 +30,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Card content */}
       <div className="px-6 py-6">
-        <h2 className="text-base font-bold text-[#0a0a0a] mb-3">
+        <h2 className="text-lg font-bold text-[#0a0a0a] mb-3">
           {title} →
         </h2>
         <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>

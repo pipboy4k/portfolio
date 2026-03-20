@@ -120,13 +120,13 @@ export default async function ProjectPage({ params }: Props) {
         )}
       </header>
 
-      {/* Cover image — full width, no border radius */}
+      {/* Cover image — 1152px centered, responsive */}
       {coverImage?.asset?.url && (
-        <div className="mb-16 -mx-6">
+        <div className="mb-16" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1152px, 100vw)' }}>
           <Image
             src={coverImage.asset.url}
             alt={coverImage.alt || title}
-            width={coverImage.asset.metadata?.dimensions?.width || 1200}
+            width={coverImage.asset.metadata?.dimensions?.width || 1152}
             height={coverImage.asset.metadata?.dimensions?.height || 800}
             className="w-full h-auto"
             priority
@@ -142,12 +142,12 @@ export default async function ProjectPage({ params }: Props) {
             components={{
               types: {
                 image: ({ value }) => (
-                  <figure className="my-12 -mx-6">
+                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, 100vw)' }}>
                     {value?.asset?.url && (
                       <Image
                         src={value.asset.url}
                         alt={value.alt || ''}
-                        width={value.asset.metadata?.dimensions?.width || 1200}
+                        width={value.asset.metadata?.dimensions?.width || 1024}
                         height={value.asset.metadata?.dimensions?.height || 800}
                         className="w-full h-auto"
                       />
@@ -167,7 +167,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Gallery — single column, no heading */}
       {gallery && gallery.length > 0 && (
-        <section className="mb-20 flex flex-col gap-4 -mx-6">
+        <section className="mb-20 flex flex-col gap-4" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, 100vw)' }}>
           {gallery.map((image, i) => (
             image?.asset?.url && (
               <div key={i}>

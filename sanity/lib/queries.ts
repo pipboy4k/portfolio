@@ -8,6 +8,10 @@ export const getAllProjectsQuery = groq`
     year,
     tags,
     summary,
+    cardImage {
+      asset->,
+      alt
+    },
     coverImage {
       asset->,
       alt
