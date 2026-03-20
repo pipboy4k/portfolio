@@ -45,6 +45,46 @@ export default defineType({
       validation: (Rule) => Rule.required().max(300),
     }),
     defineField({
+      name: 'storeLinks',
+      title: 'Store Links',
+      type: 'array',
+      description: 'Add App Store, Google Play, or web links.',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            defineField({
+              name: 'type',
+              title: 'Type',
+              type: 'string',
+              options: {
+                list: [
+                  { title: 'App Store', value: 'appStore' },
+                  { title: 'Google Play', value: 'googlePlay' },
+                  { title: 'Web', value: 'web' },
+                ],
+                layout: 'radio',
+              },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'url',
+              title: 'URL',
+              type: 'url',
+              validation: (Rule) => Rule.required(),
+            }),
+          ],
+          preview: {
+            select: { type: 'type', url: 'url' },
+            prepare({ type, url }) {
+              const labels: Record<string, string> = { appStore: 'App Store', googlePlay: 'Google Play', web: 'Web' }
+              return { title: labels[type] || type, subtitle: url }
+            },
+          },
+        },
+      ],
+    }),
+    defineField({
       name: 'coverImage',
       title: 'Cover Image',
       type: 'image',
@@ -121,46 +161,6 @@ export default defineType({
       title: 'External Link',
       type: 'url',
       description: 'Optional: link to the live project or prototype.',
-    }),
-    defineField({
-      name: 'storeLinks',
-      title: 'Store Links',
-      type: 'array',
-      description: 'Add App Store, Google Play, or web links.',
-      of: [
-        {
-          type: 'object',
-          fields: [
-            defineField({
-              name: 'type',
-              title: 'Type',
-              type: 'string',
-              options: {
-                list: [
-                  { title: 'App Store', value: 'appStore' },
-                  { title: 'Google Play', value: 'googlePlay' },
-                  { title: 'Web', value: 'web' },
-                ],
-                layout: 'radio',
-              },
-              validation: (Rule) => Rule.required(),
-            }),
-            defineField({
-              name: 'url',
-              title: 'URL',
-              type: 'url',
-              validation: (Rule) => Rule.required(),
-            }),
-          ],
-          preview: {
-            select: { type: 'type', url: 'url' },
-            prepare({ type, url }) {
-              const labels: Record<string, string> = { appStore: 'App Store', googlePlay: 'Google Play', web: 'Web' }
-              return { title: labels[type] || type, subtitle: url }
-            },
-          },
-        },
-      ],
     }),
   ],
   orderings: [

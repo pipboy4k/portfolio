@@ -97,8 +97,7 @@ export default async function ProjectPage({ params }: Props) {
                   {link.type === 'web' && (() => {
                     try {
                       const host = new URL(link.url).hostname.replace(/^www\./, '')
-                      const name = host.split('.')[0]
-                      return name.charAt(0).toUpperCase() + name.slice(1)
+                      return host.split('.')[0]
                     } catch {
                       return 'Web'
                     }
