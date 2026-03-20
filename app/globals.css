@@ -22,7 +22,7 @@ body {
 /* Project case study body typography */
 .project-body p {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #444444;
   margin-bottom: 1.75rem;
 }
@@ -68,7 +68,7 @@ body {
 .project-body ul,
 .project-body ol {
   font-size: 1rem;
-  line-height: 1.8;
+  line-height: 1.6;
   color: #444444;
   margin-bottom: 1.75rem;
   padding-left: 1.5rem;

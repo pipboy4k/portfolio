@@ -51,12 +51,12 @@ export default function HeroIntro() {
       {/* How I work */}
       <section className="py-10">
         <h2 className="text-lg font-bold text-[#0a0a0a] mb-4">How I work</h2>
-        <p className="text-base text-[#666666] leading-[1.7] mb-4">
+        <p className="text-base text-[#666666] leading-[1.6] mb-4">
           In general, I like collaborating with product managers, engineers, and
           analytics to develop design strategies that align with user needs and
           drive companies toward their business objectives.
         </p>
-        <p className="text-base text-[#666666] leading-[1.7]">
+        <p className="text-base text-[#666666] leading-[1.6]">
           I always strive to create design solutions that can be easily
           implemented, are informed by data, and have clear metrics for measuring
           their success. Focus on a result, not a process.

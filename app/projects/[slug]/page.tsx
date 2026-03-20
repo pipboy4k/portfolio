@@ -62,7 +62,7 @@ export default async function ProjectPage({ params }: Props) {
           {title}
         </h1>
 
-        <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>
+        <p className="text-base text-[#666666] leading-[1.6]">{summary}</p>
 
         {storeLinks && storeLinks.length > 0 && (
           <div className="flex flex-wrap gap-3 mt-6">
