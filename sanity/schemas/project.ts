@@ -45,6 +45,13 @@ export default defineType({
       validation: (Rule) => Rule.required().max(300),
     }),
     defineField({
+      name: 'cardDescription',
+      title: 'Card Description',
+      type: 'text',
+      rows: 3,
+      description: 'Text shown on the homepage project card. If not set, Summary is used.',
+    }),
+    defineField({
       name: 'storeLinks',
       title: 'Store Links',
       type: 'array',

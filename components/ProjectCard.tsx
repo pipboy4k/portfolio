@@ -7,8 +7,9 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { title, slug, summary, cardImage, coverImage } = project
+  const { title, slug, summary, cardDescription, cardImage, coverImage } = project
   const previewImage = cardImage?.asset?.url ? cardImage : coverImage
+  const previewDescription = cardDescription || summary
 
   return (
     <Link
@@ -33,7 +34,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <h2 className="text-lg font-bold text-[#0a0a0a] mb-3">
           {title} →
         </h2>
-        <p className="text-base text-[#666666] leading-[1.7]">{summary}</p>
+        <p className="text-base text-[#666666] leading-[1.7]">{previewDescription}</p>
       </div>
     </Link>
   )

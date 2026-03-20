@@ -20,6 +20,7 @@ export interface Project {
   year: number
   tags?: string[]
   summary: string
+  cardDescription?: string
   cardImage?: SanityImage
   coverImage: SanityImage
   externalLink?: string
