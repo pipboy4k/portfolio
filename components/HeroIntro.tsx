@@ -20,28 +20,28 @@ export default function HeroIntro() {
         </p>
 
         {/* Contact bar */}
-        <div className="bg-[#f5f5f5] rounded-2xl px-6 py-2 flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div className="bg-[#f5f5f5] rounded-2xl px-6 flex flex-col sm:flex-row sm:items-center sm:justify-between sm:h-12">
           <a
             href="mailto:ihor.kochetov@gmail.com"
-            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 sm:py-0 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             ihor.kochetov@gmail.com
           </a>
           <a
             href="#"
-            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 sm:py-0 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             instagram
           </a>
           <a
             href="#"
-            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 sm:py-0 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             linkedin
           </a>
           <a
             href="#"
-            className="py-3 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
+            className="py-3 sm:py-0 text-sm text-[#0a0a0a] hover:underline underline-offset-2"
           >
             CV
           </a>
@@ -51,12 +51,12 @@ export default function HeroIntro() {
       {/* How I work */}
       <section className="py-10">
         <h2 className="text-lg font-bold text-[#0a0a0a] mb-4">How I work</h2>
-        <p className="text-base text-[#666666] leading-[1.6] mb-4">
+        <p className="text-base text-[#0a0a0a] leading-[1.6] mb-4">
           In general, I like collaborating with product managers, engineers, and
           analytics to develop design strategies that align with user needs and
           drive companies toward their business objectives.
         </p>
-        <p className="text-base text-[#666666] leading-[1.6]">
+        <p className="text-base text-[#0a0a0a] leading-[1.6]">
           I always strive to create design solutions that can be easily
           implemented, are informed by data, and have clear metrics for measuring
           their success. Focus on a result, not a process.
