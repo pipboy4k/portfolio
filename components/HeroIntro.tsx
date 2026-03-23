@@ -2,7 +2,7 @@ export default function HeroIntro() {
   return (
     <>
       {/* Top nav */}
-      <header className="py-6 flex items-center justify-between">
+      <header className="pt-12 pb-6 flex items-center justify-between">
         <div className="flex flex-col">
           <span className="text-lg font-bold text-foreground">Ihor Kochetov</span>
           <span className="text-sm text-muted">Product designer</span>
