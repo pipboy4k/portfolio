@@ -122,13 +122,13 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Cover image — 1152px centered, responsive */}
       {coverImage?.asset?.url && (
-        <div className="mb-16" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1152px, 100vw)' }}>
+        <div className="mb-16 rounded-2xl overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1152px, calc(100vw - 32px))' }}>
           <Image
             src={coverImage.asset.url}
             alt={coverImage.alt || title}
             width={coverImage.asset.metadata?.dimensions?.width || 1152}
             height={coverImage.asset.metadata?.dimensions?.height || 800}
-            className="w-full h-auto"
+            className="w-full h-auto block"
             priority
           />
         </div>
@@ -154,15 +154,17 @@ export default async function ProjectPage({ params }: Props) {
             components={{
               types: {
                 image: ({ value }) => (
-                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, 100vw)' }}>
+                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
                     {value?.asset?.url && (
-                      <Image
-                        src={value.asset.url}
-                        alt={value.alt || ''}
-                        width={value.asset.metadata?.dimensions?.width || 1024}
-                        height={value.asset.metadata?.dimensions?.height || 800}
-                        className="w-full h-auto"
-                      />
+                      <div className="rounded-2xl overflow-hidden">
+                        <Image
+                          src={value.asset.url}
+                          alt={value.alt || ''}
+                          width={value.asset.metadata?.dimensions?.width || 1024}
+                          height={value.asset.metadata?.dimensions?.height || 800}
+                          className="w-full h-auto block"
+                        />
+                      </div>
                     )}
                     {value?.caption && (
                       <figcaption className="text-sm text-[#888888] mt-3 px-6">
@@ -179,16 +181,16 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Gallery — single column, no heading */}
       {gallery && gallery.length > 0 && (
-        <section className="mb-20 flex flex-col gap-4" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, 100vw)' }}>
+        <section className="mb-20 flex flex-col gap-4" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
           {gallery.map((image, i) => (
             image?.asset?.url && (
-              <div key={i}>
+              <div key={i} className="rounded-2xl overflow-hidden">
                 <Image
                   src={image.asset.url}
                   alt={image.alt || `Gallery image ${i + 1}`}
                   width={image.asset.metadata?.dimensions?.width || 800}
                   height={image.asset.metadata?.dimensions?.height || 600}
-                  className="w-full h-auto"
+                  className="w-full h-auto block"
                 />
               </div>
             )
