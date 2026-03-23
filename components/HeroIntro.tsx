@@ -11,11 +11,11 @@ export default function HeroIntro() {
       <section className="pt-12 pb-10">
         <p className="text-[1.5rem] sm:text-[2rem] leading-[1.15] font-extrabold text-[#0a0a0a] mb-10">
           Currently leading the Design System Team at{' '}
-          <span className="text-[#888888]">Transcenda.</span>{' '}
+          <a href="https://www.transcenda.com/" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#0a0a0a] hover:underline underline-offset-2">Transcenda.</a>{' '}
           Before that Lead Product Designer at{' '}
-          <span className="text-[#888888]">JustAnswer</span>{' '}
+          <a href="https://www.justanswer.com/" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#0a0a0a] hover:underline underline-offset-2">JustAnswer</a>{' '}
           and Experience Designer at{' '}
-          <span className="text-[#888888]">SoftServe</span>{' '}
+          <a href="https://www.softserveinc.com/en-us" target="_blank" rel="noopener noreferrer" className="text-[#888888] hover:text-[#0a0a0a] hover:underline underline-offset-2">SoftServe</a>{' '}
           working with complex B2B and B2C products
         </p>
 
