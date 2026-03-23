@@ -15,7 +15,7 @@ export default function HeroIntro() {
       </header>
 
       {/* Hero */}
-      <section className="pt-12 pb-10">
+      <section className="pt-24 pb-10">
         <h1 className="text-[1.5rem] sm:text-[2rem] leading-[1.15] font-bold text-foreground mb-6">
           Leading design system team @ Transcenda
         </h1>
