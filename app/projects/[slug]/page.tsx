@@ -34,7 +34,7 @@ export default async function ProjectPage({ params }: Props) {
       {/* Back link */}
       <Link
         href="/"
-        className="inline-flex items-center gap-1.5 text-sm text-[#888888] hover:text-[#0a0a0a] transition-colors mb-16"
+        className="inline-flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors mb-16"
       >
         ← Back
       </Link>
@@ -45,24 +45,24 @@ export default async function ProjectPage({ params }: Props) {
         {((tags && tags.length > 0) || year) && (
           <div className="flex items-center gap-2 mb-5">
             {tags && tags.length > 0 && (
-              <span className="text-xs uppercase tracking-widest text-[#888888]">
+              <span className="text-xs uppercase tracking-widest text-muted">
                 {tags.join(', ')}
               </span>
             )}
             {year && tags && tags.length > 0 && (
-              <span className="text-xs text-[#cccccc]">·</span>
+              <span className="text-xs text-divider">·</span>
             )}
             {year && (
-              <span className="text-xs uppercase tracking-widest text-[#888888]">{year}</span>
+              <span className="text-xs uppercase tracking-widest text-muted">{year}</span>
             )}
           </div>
         )}
 
-        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-[#0a0a0a] leading-[1.15] mb-5">
+        <h1 className="text-2xl sm:text-4xl font-bold tracking-tight text-foreground leading-[1.15] mb-5">
           {title}
         </h1>
 
-        <p className="text-base text-[#666666] leading-[1.6]">{summary}</p>
+        <p className="text-base text-subtle leading-[1.6]">{summary}</p>
 
         {storeLinks && storeLinks.length > 0 && (
           <div className="flex flex-wrap gap-3 mt-6">
@@ -72,7 +72,7 @@ export default async function ProjectPage({ params }: Props) {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2.5 bg-[#0a0a0a] text-white px-5 py-3 rounded-xl hover:bg-[#333] transition-colors"
+                className="inline-flex items-center gap-2.5 bg-foreground text-white px-5 py-3 rounded-xl hover:bg-foreground-hover transition-colors"
               >
                 {link.type === 'appStore' && (
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -113,7 +113,7 @@ export default async function ProjectPage({ params }: Props) {
             href={externalLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-5 text-sm text-[#0a0a0a] underline underline-offset-2 hover:text-[#666666] transition-colors"
+            className="inline-flex items-center gap-1.5 mt-5 text-sm text-foreground underline underline-offset-2 hover:text-subtle transition-colors"
           >
             View live project ↗
           </a>
@@ -136,11 +136,11 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* Metadata block */}
       {metadata && metadata.length > 0 && (
-        <div className="mb-16 bg-[#f5f5f5] rounded-2xl px-6 py-5">
+        <div className="mb-16 bg-surface rounded-2xl px-6 py-5">
           {metadata.map((item) => (
             <div key={item._key} className="flex flex-col sm:flex-row sm:gap-8 py-2">
-              <span className="text-sm font-bold text-[#0a0a0a] sm:w-28 sm:shrink-0">{item.label}</span>
-              <span className="text-sm text-[#666666] leading-[1.6]">{item.value}</span>
+              <span className="text-sm font-bold text-foreground sm:w-28 sm:shrink-0">{item.label}</span>
+              <span className="text-sm text-subtle leading-[1.6]">{item.value}</span>
             </div>
           ))}
         </div>
@@ -167,7 +167,7 @@ export default async function ProjectPage({ params }: Props) {
                       </div>
                     )}
                     {value?.caption && (
-                      <figcaption className="text-sm text-[#888888] mt-3 px-6">
+                      <figcaption className="text-sm text-muted mt-3 px-6">
                         {value.caption}
                       </figcaption>
                     )}
@@ -199,10 +199,10 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* Footer nav */}
-      <div className="border-t border-[#e5e5e5] pt-8">
+      <div className="border-t border-border pt-8">
         <Link
           href="/"
-          className="text-sm text-[#888888] hover:text-[#0a0a0a] transition-colors"
+          className="text-sm text-muted hover:text-foreground transition-colors"
         >
           ← All projects
         </Link>

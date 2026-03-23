@@ -3,11 +3,27 @@
 :root {
   --background: #ffffff;
   --foreground: #0a0a0a;
+  --muted: #888888;
+  --subtle: #666666;
+  --body: #444444;
+  --surface: #f5f5f5;
+  --surface-hover: #eeeeee;
+  --border: #e5e5e5;
+  --divider: #cccccc;
+  --foreground-hover: #333333;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-body: var(--body);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-divider: var(--divider);
+  --color-foreground-hover: var(--foreground-hover);
   --font-sans: var(--font-inter);
 }
 
@@ -23,14 +39,14 @@ body {
 .project-body p {
   font-size: 1rem;
   line-height: 1.6;
-  color: #444444;
+  color: var(--body);
   margin-bottom: 1.75rem;
 }
 
 .project-body h1 {
   font-size: 2rem;
   font-weight: 800;
-  color: #0a0a0a;
+  color: var(--foreground);
   margin-top: 3.5rem;
   margin-bottom: 1rem;
   letter-spacing: -0.02em;
@@ -40,7 +56,7 @@ body {
 .project-body h2 {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #0a0a0a;
+  color: var(--foreground);
   margin-top: 3rem;
   margin-bottom: 0.875rem;
   letter-spacing: -0.01em;
@@ -50,7 +66,7 @@ body {
 .project-body h3 {
   font-size: 1.25rem;
   font-weight: 700;
-  color: #0a0a0a;
+  color: var(--foreground);
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   line-height: 1.4;
@@ -59,7 +75,7 @@ body {
 .project-body h4 {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #0a0a0a;
+  color: var(--foreground);
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   line-height: 1.4;
@@ -69,7 +85,7 @@ body {
 .project-body ol {
   font-size: 1rem;
   line-height: 1.6;
-  color: #444444;
+  color: var(--body);
   margin-bottom: 1.75rem;
   padding-left: 1.5rem;
 }
@@ -88,24 +104,24 @@ body {
 
 .project-body strong {
   font-weight: 600;
-  color: #0a0a0a;
+  color: var(--foreground);
 }
 
 .project-body a {
   text-decoration: underline;
-  color: #0a0a0a;
+  color: var(--foreground);
   text-underline-offset: 2px;
 }
 
 .project-body a:hover {
-  color: #666666;
+  color: var(--subtle);
 }
 
 .project-body blockquote {
-  border-left: 2px solid #e5e5e5;
+  border-left: 2px solid var(--border);
   padding-left: 1.25rem;
   margin: 2rem 0;
-  color: #666666;
+  color: var(--subtle);
   font-style: italic;
 }
 

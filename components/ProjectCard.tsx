@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
       href={`/projects/${slug.current}`}
-      className="group block rounded-2xl overflow-hidden bg-[#f5f5f5] hover:bg-[#eeeeee] transition-colors duration-300"
+      className="group block rounded-2xl overflow-hidden bg-surface hover:bg-surface-hover transition-colors duration-300"
     >
       {/* Card image (falls back to cover image) */}
       {previewImage?.asset?.url && (
@@ -31,10 +31,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Card content */}
       <div className="px-6 py-6">
-        <h2 className="text-lg font-bold text-[#0a0a0a] mb-3">
+        <h2 className="text-lg font-bold text-foreground mb-3">
           {title} →
         </h2>
-        <p className="text-base text-[#666666] leading-[1.7]">{previewDescription}</p>
+        <p className="text-base text-subtle leading-[1.7]">{previewDescription}</p>
       </div>
     </Link>
   )

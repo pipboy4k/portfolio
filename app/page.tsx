@@ -20,14 +20,14 @@ export default async function HomePage() {
       <HeroIntro />
 
       <section className="pb-24">
-        <h2 className="text-lg font-bold text-[#0a0a0a] mb-6">
+        <h2 className="text-lg font-bold text-foreground mb-6">
           Selected works
         </h2>
 
         {projects.length === 0 ? (
-          <p className="text-[#666666]">
+          <p className="text-subtle">
             No projects yet. Add your first project in the{' '}
-            <a href="/studio" className="underline hover:text-[#0a0a0a]">
+            <a href="/studio" className="underline hover:text-foreground">
               Studio
             </a>
             .
@@ -43,7 +43,7 @@ export default async function HomePage() {
 
       {/* Spotify */}
       <section className="pb-24">
-        <h2 className="text-lg font-bold text-[#0a0a0a] mb-6">Some music I like</h2>
+        <h2 className="text-lg font-bold text-foreground mb-6">Some music I like</h2>
         <iframe
           src="https://open.spotify.com/embed/playlist/0lyvGdTtVzkHKvvVaEU3Jm"
           width="100%"
