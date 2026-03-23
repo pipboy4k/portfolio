@@ -43,6 +43,7 @@ export default async function HomePage() {
 
       {/* Spotify */}
       <section className="pb-24">
+        <h2 className="text-lg font-bold text-[#0a0a0a] mb-6">Some music I like</h2>
         <iframe
           src="https://open.spotify.com/embed/playlist/0lyvGdTtVzkHKvvVaEU3Jm"
           width="100%"
