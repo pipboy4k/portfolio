@@ -8,6 +8,7 @@
   --body: #444444;
   --surface: #f5f5f5;
   --surface-hover: #eeeeee;
+  --surface-active: #e9e9e9;
   --border: #e5e5e5;
   --divider: #cccccc;
   --foreground-hover: #333333;
@@ -22,6 +23,7 @@
   --color-body: var(--body);
   --color-surface: var(--surface);
   --color-surface-hover: var(--surface-hover);
+  --color-surface-active: var(--surface-active);
   --color-border: var(--border);
   --color-divider: var(--divider);
   --color-foreground-hover: var(--foreground-hover);
