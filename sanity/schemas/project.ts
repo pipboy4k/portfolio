@@ -22,10 +22,16 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'order',
+      title: 'Order',
+      type: 'number',
+      description: 'Controls display order on the homepage. Lower numbers appear first.',
+    }),
+    defineField({
       name: 'year',
       title: 'Year',
       type: 'number',
-      validation: (Rule) => Rule.required().min(2000).max(2099),
+      validation: (Rule) => Rule.min(2000).max(2099),
     }),
     defineField({
       name: 'cardDescription',
@@ -214,6 +220,11 @@ export default defineType({
     }),
   ],
   orderings: [
+    {
+      title: 'Manual Order',
+      name: 'manualOrder',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
     {
       title: 'Year, Newest First',
       name: 'yearDesc',
