@@ -33,7 +33,7 @@ export default async function HomePage() {
             .
           </p>
         ) : (
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-16">
             {projects.map((project) => (
               <ProjectCard key={project._id} project={project} />
             ))}
