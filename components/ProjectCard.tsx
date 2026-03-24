@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       {/* Image sits in a gray container */}
       {previewImage?.asset?.url && (
-        <div className="bg-surface-secondary rounded-2xl overflow-hidden">
+        <div className="bg-surface rounded-2xl overflow-hidden">
           <Image
             src={previewImage.asset.url}
             alt={previewImage.alt || title}
