@@ -32,12 +32,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
       {/* Text on white background */}
       <div className="py-5">
-        <div className="flex items-baseline justify-between gap-4">
-          <p className="text-base font-bold text-foreground">{title}</p>
-          {year && <p className="text-base text-muted shrink-0">{year}</p>}
-        </div>
+        <p className="text-base font-bold text-foreground">{title}</p>
         {role && <p className="text-base text-muted mt-1">{role}</p>}
-        {description && <p className="text-base text-subtle leading-[1.6] mt-1">{description}</p>}
+        {description && <p className="text-sm text-subtle leading-[1.6] mt-1">{description}</p>}
+        {year && <p className="text-sm text-muted mt-2">{year}</p>}
       </div>
     </Link>
   )
