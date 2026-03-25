@@ -30,8 +30,8 @@ export default defineType({
     defineField({
       name: 'year',
       title: 'Year',
-      type: 'number',
-      validation: (Rule) => Rule.min(2000).max(2099),
+      type: 'string',
+      description: 'e.g. 2025 or 2020 — 2023',
     }),
     defineField({
       name: 'cardDescription',
@@ -228,7 +228,7 @@ export default defineType({
     {
       title: 'Year, Newest First',
       name: 'yearDesc',
-      by: [{ field: 'year', direction: 'desc' }],
+      by: [{ field: 'year', direction: 'desc' as const }],
     },
   ],
   preview: {
