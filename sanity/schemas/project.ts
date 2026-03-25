@@ -64,14 +64,6 @@ export default defineType({
       },
     }),
     defineField({
-      name: 'summary',
-      title: 'Summary',
-      type: 'text',
-      rows: 3,
-      description: 'Short description shown on the project card.',
-      validation: (Rule) => Rule.required().max(300),
-    }),
-    defineField({
       name: 'storeLinks',
       title: 'Store Links',
       type: 'array',
@@ -153,6 +145,14 @@ export default defineType({
         }),
       ],
       validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'summary',
+      title: 'Summary',
+      type: 'text',
+      rows: 3,
+      description: 'Short description shown on the project card.',
+      validation: (Rule) => Rule.required().max(300),
     }),
     defineField({
       name: 'body',
