@@ -34,8 +34,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="py-5">
         <p className="text-base font-bold text-foreground">{title}</p>
         {role && <p className="text-base text-muted mt-1">{role}</p>}
-        {description && <p className="text-sm text-subtle leading-[1.6] mt-1">{description}</p>}
-        {year && <p className="text-sm text-muted mt-2">{year}</p>}
+        {description && <p className="text-base text-subtle leading-[1.6] mt-1">{description}</p>}
+        {year && <p className="text-base text-muted mt-2">{year}</p>}
       </div>
     </Link>
   )
