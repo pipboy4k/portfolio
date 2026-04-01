@@ -163,8 +163,8 @@ export default async function ProjectPage({ params }: Props) {
                           muted
                           loop
                           playsInline
-                          className="w-full block"
-                          style={{ maxHeight: '720px', objectFit: 'contain' }}
+                          className="w-full h-auto block"
+                          style={{ maxHeight: '720px' }}
                         />
                       </div>
                     )}
