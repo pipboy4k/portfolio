@@ -153,6 +153,25 @@ export default async function ProjectPage({ params }: Props) {
             value={body}
             components={{
               types: {
+                videoFile: ({ value }) => (
+                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
+                    {value?.file?.asset?.url && (
+                      <div className="rounded-2xl overflow-hidden">
+                        <video
+                          src={value.file.asset.url}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                          className="w-full h-auto block"
+                        />
+                      </div>
+                    )}
+                    {value?.caption && (
+                      <figcaption className="text-sm text-muted mt-3 px-6">{value.caption}</figcaption>
+                    )}
+                  </figure>
+                ),
                 videoEmbed: ({ value }) => {
                   const url = new URL(value.url)
                   url.searchParams.set('hide_owner', 'true')
@@ -166,7 +185,7 @@ export default async function ProjectPage({ params }: Props) {
                       <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%' }}>
                         <iframe
                           src={url.toString()}
-                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '110%' }}
                           frameBorder="0"
                           allowFullScreen
                         />

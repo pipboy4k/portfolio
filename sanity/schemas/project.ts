@@ -194,6 +194,31 @@ export default defineType({
         },
         {
           type: 'object',
+          name: 'videoFile',
+          title: 'Video File',
+          fields: [
+            defineField({
+              name: 'file',
+              title: 'Video File',
+              type: 'file',
+              options: { accept: 'video/mp4,video/webm' },
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
+            }),
+          ],
+          preview: {
+            select: { title: 'file' },
+            prepare() {
+              return { title: 'Video File' }
+            },
+          },
+        },
+        {
+          type: 'object',
           name: 'videoEmbed',
           title: 'Video Embed',
           fields: [

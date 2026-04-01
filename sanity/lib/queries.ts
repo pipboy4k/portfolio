@@ -41,6 +41,10 @@ export const getProjectBySlugQuery = groq`
       _type == "image" => {
         ...,
         asset->
+      },
+      _type == "videoFile" => {
+        ...,
+        file { asset-> }
       }
     },
     gallery[] {
