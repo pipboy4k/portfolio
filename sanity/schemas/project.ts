@@ -192,6 +192,31 @@ export default defineType({
             }),
           ],
         },
+        {
+          type: 'object',
+          name: 'videoEmbed',
+          title: 'Video Embed',
+          fields: [
+            defineField({
+              name: 'url',
+              title: 'Embed URL',
+              type: 'url',
+              description: 'Paste the Loom embed URL (e.g. https://www.loom.com/embed/...)',
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
+            }),
+          ],
+          preview: {
+            select: { url: 'url' },
+            prepare({ url }: { url: string }) {
+              return { title: 'Video Embed', subtitle: url }
+            },
+          },
+        },
       ],
     }),
     defineField({
