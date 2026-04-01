@@ -153,21 +153,30 @@ export default async function ProjectPage({ params }: Props) {
             value={body}
             components={{
               types: {
-                videoEmbed: ({ value }) => (
-                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
-                    <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%' }}>
-                      <iframe
-                        src={value.url}
-                        style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                        frameBorder="0"
-                        allowFullScreen
-                      />
-                    </div>
-                    {value?.caption && (
-                      <figcaption className="text-sm text-muted mt-3 px-6">{value.caption}</figcaption>
-                    )}
-                  </figure>
-                ),
+                videoEmbed: ({ value }) => {
+                  const url = new URL(value.url)
+                  url.searchParams.set('hide_owner', 'true')
+                  url.searchParams.set('hide_share', 'true')
+                  url.searchParams.set('hide_title', 'true')
+                  url.searchParams.set('hideEmbedTopBar', 'true')
+                  url.searchParams.set('autoplay', '1')
+                  url.searchParams.set('muted', '1')
+                  return (
+                    <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
+                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%' }}>
+                        <iframe
+                          src={url.toString()}
+                          style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                          frameBorder="0"
+                          allowFullScreen
+                        />
+                      </div>
+                      {value?.caption && (
+                        <figcaption className="text-sm text-muted mt-3 px-6">{value.caption}</figcaption>
+                      )}
+                    </figure>
+                  )
+                },
                 image: ({ value }) => (
                   <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
                     {value?.asset?.url && (
