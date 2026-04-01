@@ -212,8 +212,8 @@ export default defineType({
           ],
           preview: {
             select: { url: 'url' },
-            prepare({ url }: { url: string }) {
-              return { title: 'Video Embed', subtitle: url }
+            prepare(value: Record<string, any>) {
+              return { title: 'Video Embed', subtitle: value.url }
             },
           },
         },
