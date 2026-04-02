@@ -53,7 +53,7 @@ export default async function ProjectPage({ params }: Props) {
               <span className="text-xs text-divider">·</span>
             )}
             {year && (
-              <span className="text-xs uppercase tracking-widest text-muted">{year}</span>
+              <span className="text-xs uppercase text-muted">{year}</span>
             )}
           </div>
         )}
