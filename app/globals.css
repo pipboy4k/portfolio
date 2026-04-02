@@ -15,6 +15,23 @@
   --foreground-hover: #333333;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #f0f0f0;
+    --muted: #777777;
+    --subtle: #999999;
+    --body: #bbbbbb;
+    --surface: #1a1a1a;
+    --surface-secondary: #1f1f1f;
+    --surface-hover: #242424;
+    --surface-active: #2a2a2a;
+    --border: #2e2e2e;
+    --divider: #444444;
+    --foreground-hover: #cccccc;
+  }
+}
+
 @theme inline {
   --breakpoint-xs: 420px;
   --color-background: var(--background);
