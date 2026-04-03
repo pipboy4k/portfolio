@@ -24,6 +24,7 @@ export interface Project {
   cardImage?: SanityImage
   coverImage: SanityImage
   externalLink?: string
+  customPath?: string
 }
 
 export interface StoreLink {

@@ -17,7 +17,8 @@ export const getAllProjectsQuery = groq`
     coverImage {
       asset->,
       alt
-    }
+    },
+    customPath
   }
 `
 

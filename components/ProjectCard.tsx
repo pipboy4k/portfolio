@@ -7,14 +7,15 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project }: ProjectCardProps) {
-  const { title, slug, tags, year, summary, cardDescription, cardImage, coverImage } = project
+  const { title, slug, tags, year, summary, cardDescription, cardImage, coverImage, customPath } = project
   const previewImage = cardImage?.asset?.url ? cardImage : coverImage
   const role = tags?.[0]
   const description = cardDescription || summary
+  const href = customPath || `/projects/${slug.current}`
 
   return (
     <Link
-      href={`/projects/${slug.current}`}
+      href={href}
       className="group block rounded-2xl overflow-hidden bg-background transition-all duration-300"
     >
       {/* Image sits in a gray container */}

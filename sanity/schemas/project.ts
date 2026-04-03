@@ -263,6 +263,12 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'customPath',
+      title: 'Custom Card Link',
+      type: 'string',
+      description: 'Optional: override the card link (e.g. /side-projects). Leave blank to use the default project page.',
+    }),
+    defineField({
       name: 'externalLink',
       title: 'External Link',
       type: 'url',
