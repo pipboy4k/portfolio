@@ -55,7 +55,7 @@ export default async function SideProjectsPage() {
                   videoFile: ({ value }) => (
                     <figure className="my-10">
                       {value?.file?.asset?.url && (
-                        <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: value.backgroundColor || undefined }}>
+                        <div className="overflow-hidden" style={{ backgroundColor: value.backgroundColor || undefined, borderRadius: '24px' }}>
                           <video
                             src={value.file.asset.url}
                             autoPlay
@@ -63,7 +63,7 @@ export default async function SideProjectsPage() {
                             loop
                             playsInline
                             className="w-full h-auto block"
-                            style={{ maxHeight: '720px' }}
+                            style={{ maxHeight: '720px', borderRadius: '24px' }}
                           />
                         </div>
                       )}
