@@ -3,7 +3,7 @@ export default function HeroIntro() {
     <>
       {/* Top nav */}
       <header className="pt-12 pb-6 flex flex-col xs:flex-row xs:items-end xs:justify-between gap-4">
-        <div className="flex flex-row items-baseline gap-2 xs:flex-col">
+        <div className="flex flex-col gap-0">
           <span className="text-lg font-bold text-foreground">Ihor Kochetov</span>
           <span className="text-sm text-muted">Product designer</span>
         </div>
