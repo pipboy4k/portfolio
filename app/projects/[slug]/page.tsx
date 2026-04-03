@@ -192,14 +192,16 @@ export default async function ProjectPage({ params }: Props) {
                 image: ({ value }) => (
                   <figure className="my-12">
                     {value?.asset?.url && (
-                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
-                        <Image
-                          src={value.asset.url}
-                          alt={value.alt || ''}
-                          width={value.asset.metadata?.dimensions?.width || 1024}
-                          height={value.asset.metadata?.dimensions?.height || 800}
-                          className="w-full h-auto block"
-                        />
+                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: value.backgroundColor ? '24px' : undefined, padding: value.backgroundColor ? '32px' : undefined, display: value.backgroundColor ? 'flex' : undefined, justifyContent: value.backgroundColor ? 'center' : undefined }}>
+                        <div style={{ borderRadius: '16px', overflow: 'hidden', lineHeight: 0, width: value.backgroundColor ? 'auto' : '100%' }}>
+                          <Image
+                            src={value.asset.url}
+                            alt={value.alt || ''}
+                            width={value.asset.metadata?.dimensions?.width || 1024}
+                            height={value.asset.metadata?.dimensions?.height || 800}
+                            style={{ display: 'block', maxWidth: '100%', height: 'auto' }}
+                          />
+                        </div>
                       </div>
                     )}
                     {value?.caption && (

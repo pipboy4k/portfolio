@@ -190,6 +190,12 @@ export default defineType({
               title: 'Caption',
               type: 'string',
             }),
+            defineField({
+              name: 'backgroundColor',
+              title: 'Frame Background Color',
+              type: 'string',
+              description: 'Optional: CSS color for the image frame (e.g. #f5f5f5, #0a0a0a). Leave blank for transparent.',
+            }),
           ],
         },
         {
