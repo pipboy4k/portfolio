@@ -15,8 +15,8 @@ function SideProjectCard({ card }: { card: SideProject }) {
       href="/side-projects"
       className="group block rounded-2xl overflow-hidden bg-background transition-all duration-300"
     >
-      <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden">
-        {card.cardImage?.asset?.url ? (
+      {card.cardImage?.asset?.url && (
+        <div className="bg-surface rounded-2xl overflow-hidden">
           <Image
             src={card.cardImage.asset.url}
             alt={card.cardImage.alt || card.title}
@@ -24,10 +24,8 @@ function SideProjectCard({ card }: { card: SideProject }) {
             height={card.cardImage.asset.metadata?.dimensions?.height || 600}
             className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
           />
-        ) : (
-          <div className="h-48" />
-        )}
-      </div>
+        </div>
+      )}
       <div className="py-5">
         <p className="text-base font-bold text-foreground">{card.title}</p>
         {card.cardDescription && (
