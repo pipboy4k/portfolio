@@ -1,15 +1,15 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { client } from '@/sanity/lib/client'
-import { getAllProjectsQuery, getSideProjectsPageQuery } from '@/sanity/lib/queries'
-import { Project, SideProjectsPage } from '@/types'
+import { getAllProjectsQuery, getSideProjectQuery } from '@/sanity/lib/queries'
+import { Project, SideProject } from '@/types'
 import HeroIntro from '@/components/HeroIntro'
 import ProjectCard from '@/components/ProjectCard'
 import Footer from '@/components/Footer'
 
 export const revalidate = 60
 
-function SideProjectsCard({ card }: { card: SideProjectsPage }) {
+function SideProjectCard({ card }: { card: SideProject }) {
   return (
     <Link
       href="/side-projects"
@@ -19,7 +19,7 @@ function SideProjectsCard({ card }: { card: SideProjectsPage }) {
         {card.cardImage?.asset?.url ? (
           <Image
             src={card.cardImage.asset.url}
-            alt={card.cardImage.alt || card.cardTitle}
+            alt={card.cardImage.alt || card.title}
             width={card.cardImage.asset.metadata?.dimensions?.width || 960}
             height={card.cardImage.asset.metadata?.dimensions?.height || 600}
             className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
@@ -29,7 +29,7 @@ function SideProjectsCard({ card }: { card: SideProjectsPage }) {
         )}
       </div>
       <div className="py-5">
-        <p className="text-base font-bold text-foreground">{card.cardTitle}</p>
+        <p className="text-base font-bold text-foreground">{card.title}</p>
         {card.cardDescription && (
           <p className="text-base text-subtle leading-[1.6] mt-1">{card.cardDescription}</p>
         )}
@@ -40,26 +40,25 @@ function SideProjectsCard({ card }: { card: SideProjectsPage }) {
 
 export default async function HomePage() {
   let projects: Project[] = []
-  let sideProjectsCard: SideProjectsPage | null = null
+  let sideProject: SideProject | null = null
 
   try {
-    ;[projects, sideProjectsCard] = await Promise.all([
+    ;[projects, sideProject] = await Promise.all([
       client.fetch(getAllProjectsQuery),
-      client.fetch(getSideProjectsPageQuery),
+      client.fetch(getSideProjectQuery),
     ])
   } catch {
     // Sanity not configured yet — show empty state
   }
 
-  // Build ordered list: merge projects with the side projects card by their order value
   type CardItem =
     | { type: 'project'; data: Project; order: number }
-    | { type: 'sideProjects'; data: SideProjectsPage; order: number }
+    | { type: 'sideProject'; data: SideProject; order: number }
 
   const items: CardItem[] = [
     ...projects.map((p) => ({ type: 'project' as const, data: p, order: p.order ?? 999 })),
-    ...(sideProjectsCard
-      ? [{ type: 'sideProjects' as const, data: sideProjectsCard, order: sideProjectsCard.cardOrder ?? 999 }]
+    ...(sideProject
+      ? [{ type: 'sideProject' as const, data: sideProject, order: sideProject.cardOrder ?? 999 }]
       : []),
   ].sort((a, b) => a.order - b.order)
 
@@ -86,7 +85,7 @@ export default async function HomePage() {
               item.type === 'project' ? (
                 <ProjectCard key={item.data._id} project={item.data} />
               ) : (
-                <SideProjectsCard key={item.data._id} card={item.data} />
+                <SideProjectCard key={item.data._id} card={item.data} />
               )
             )}
           </div>

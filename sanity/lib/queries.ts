@@ -58,27 +58,16 @@ export const getAllProjectSlugsQuery = groq`
   *[_type == "project"] { "slug": slug.current }
 `
 
-export const getSideProjectsPageQuery = groq`
-  *[_type == "sideProjectsPage"][0] {
+export const getSideProjectQuery = groq`
+  *[_type == "sideProject"][0] {
     _id,
-    cardTitle,
+    title,
     cardDescription,
     cardOrder,
     cardImage {
       asset->,
       alt
-    }
-  }
-`
-
-export const getAllSideProjectsQuery = groq`
-  *[_type == "sideProject"] | order(order asc) {
-    _id,
-    title,
-    slug,
-    order,
-    tags,
-    link,
+    },
     body[] {
       ...,
       _type == "image" => {

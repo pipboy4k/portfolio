@@ -47,17 +47,8 @@ export interface ProjectDetail extends Project {
 export interface SideProject {
   _id: string
   title: string
-  slug: { current: string }
-  order?: number
-  tags?: string[]
-  link?: string
-  body?: Array<{ _type: string; [key: string]: unknown }>
-}
-
-export interface SideProjectsPage {
-  _id: string
-  cardTitle: string
   cardDescription?: string
   cardImage?: SanityImage
   cardOrder?: number
+  body?: Array<{ _type: string; [key: string]: unknown }>
 }

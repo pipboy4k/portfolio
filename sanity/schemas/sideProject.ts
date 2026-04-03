@@ -4,48 +4,48 @@ export default defineType({
   name: 'sideProject',
   title: 'Side Project',
   type: 'document',
+  // Singleton: only one document should exist
+  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({
       name: 'title',
       title: 'Title',
       type: 'string',
+      description: 'Shown on the homepage card and as the page heading.',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
-      name: 'slug',
-      title: 'Slug',
-      type: 'slug',
-      options: {
-        source: 'title',
-        maxLength: 96,
-      },
-      validation: (Rule) => Rule.required(),
+      name: 'cardDescription',
+      title: 'Card Description',
+      type: 'text',
+      rows: 3,
+      description: 'Short description shown on the homepage card.',
     }),
     defineField({
-      name: 'order',
+      name: 'cardImage',
+      title: 'Card Image',
+      type: 'image',
+      options: { hotspot: true },
+      description: 'Image shown on the homepage card.',
+      fields: [
+        defineField({
+          name: 'alt',
+          title: 'Alt Text',
+          type: 'string',
+        }),
+      ],
+    }),
+    defineField({
+      name: 'cardOrder',
       title: 'Order',
       type: 'number',
-      description: 'Controls display order. Lower numbers appear first.',
-    }),
-    defineField({
-      name: 'tags',
-      title: 'Tags',
-      type: 'array',
-      of: [{ type: 'string' }],
-      options: {
-        layout: 'tags',
-      },
-    }),
-    defineField({
-      name: 'link',
-      title: 'External Link',
-      type: 'url',
-      description: 'Optional: link to the live project.',
+      description: 'Controls where this card appears among other projects on the homepage. Lower numbers appear first.',
     }),
     defineField({
       name: 'body',
       title: 'Content',
       type: 'array',
+      description: 'Add text and images one by one to build the page.',
       of: [
         {
           type: 'block',
@@ -133,19 +133,10 @@ export default defineType({
       ],
     }),
   ],
-  orderings: [
-    {
-      title: 'Manual Order',
-      name: 'manualOrder',
-      by: [{ field: 'order', direction: 'asc' }],
-    },
-  ],
   preview: {
-    select: {
-      title: 'title',
-    },
-    prepare({ title }) {
-      return { title }
+    select: { title: 'title', media: 'cardImage' },
+    prepare({ title, media }) {
+      return { title: title || 'Side Project', media }
     },
   },
 })
