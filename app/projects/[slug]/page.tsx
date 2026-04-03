@@ -244,7 +244,7 @@ export default async function ProjectPage({ params }: Props) {
       )}
 
       {/* Footer nav */}
-      <div className="pt-8">
+      <div className="pt-8 pb-16">
         <Link
           href="/"
           className="text-sm text-muted hover:text-foreground transition-colors"
