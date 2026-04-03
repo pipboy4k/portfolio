@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PortableText } from '@portabletext/react'
+import Footer from '@/components/Footer'
 import { client } from '@/sanity/lib/client'
 import { getProjectBySlugQuery, getAllProjectSlugsQuery } from '@/sanity/lib/queries'
 import { ProjectDetail, StoreLink } from '@/types'
@@ -251,6 +252,7 @@ export default async function ProjectPage({ params }: Props) {
           All projects
         </Link>
       </div>
+      <Footer />
     </main>
   )
 }

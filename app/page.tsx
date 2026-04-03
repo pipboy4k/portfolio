@@ -3,6 +3,7 @@ import { getAllProjectsQuery } from '@/sanity/lib/queries'
 import { Project } from '@/types'
 import HeroIntro from '@/components/HeroIntro'
 import ProjectCard from '@/components/ProjectCard'
+import Footer from '@/components/Footer'
 
 export const revalidate = 60
 
@@ -53,6 +54,7 @@ export default async function HomePage() {
           loading="lazy"
         />
       </section>
+      <Footer />
     </main>
   )
 }
