@@ -55,16 +55,17 @@ export default async function SideProjectsPage() {
                   videoFile: ({ value }) => (
                     <figure className="my-10">
                       {value?.file?.asset?.url && (
-                        <div className="overflow-hidden" style={{ backgroundColor: value.backgroundColor || undefined, borderRadius: '24px', paddingTop: '32px', paddingBottom: '32px' }}>
-                          <video
-                            src={value.file.asset.url}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            className="w-full h-auto block"
-                            style={{ maxHeight: '720px', borderRadius: '24px' }}
-                          />
+                        <div style={{ backgroundColor: value.backgroundColor || undefined, borderRadius: '32px', paddingTop: '32px', paddingBottom: '32px', display: 'flex', justifyContent: 'center' }}>
+                          <div style={{ borderRadius: '32px', overflow: 'hidden', display: 'inline-block', lineHeight: 0 }}>
+                            <video
+                              src={value.file.asset.url}
+                              autoPlay
+                              muted
+                              loop
+                              playsInline
+                              style={{ display: 'block', maxHeight: '720px', maxWidth: '100%', height: 'auto' }}
+                            />
+                          </div>
                         </div>
                       )}
                       {value?.caption && (

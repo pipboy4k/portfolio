@@ -147,16 +147,17 @@ export default async function ProjectPage({ params }: Props) {
                 videoFile: ({ value }) => (
                   <figure className="my-12">
                     {value?.file?.asset?.url && (
-                      <div className="overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '24px', paddingTop: '32px', paddingBottom: '32px' }}>
-                        <video
-                          src={value.file.asset.url}
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                          className="w-full h-auto block"
-                          style={{ maxHeight: '720px', borderRadius: '24px' }}
-                        />
+                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '32px', paddingTop: '32px', paddingBottom: '32px', display: 'flex', justifyContent: 'center' }}>
+                        <div style={{ borderRadius: '32px', overflow: 'hidden', display: 'inline-block', lineHeight: 0 }}>
+                          <video
+                            src={value.file.asset.url}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            style={{ display: 'block', maxHeight: '720px', maxWidth: '100%', height: 'auto' }}
+                          />
+                        </div>
                       </div>
                     )}
                     {value?.caption && (
