@@ -145,9 +145,9 @@ export default async function ProjectPage({ params }: Props) {
             components={{
               types: {
                 videoFile: ({ value }) => (
-                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
+                  <figure className="my-12">
                     {value?.file?.asset?.url && (
-                      <div className="rounded-2xl overflow-hidden">
+                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
                         <video
                           src={value.file.asset.url}
                           autoPlay
@@ -160,7 +160,7 @@ export default async function ProjectPage({ params }: Props) {
                       </div>
                     )}
                     {value?.caption && (
-                      <figcaption className="text-sm text-muted mt-3 px-6">{value.caption}</figcaption>
+                      <figcaption className="text-sm text-muted mt-3">{value.caption}</figcaption>
                     )}
                   </figure>
                 ),
@@ -173,8 +173,8 @@ export default async function ProjectPage({ params }: Props) {
                   url.searchParams.set('autoplay', '1')
                   url.searchParams.set('muted', '1')
                   return (
-                    <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
-                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', paddingBottom: '56.25%' }}>
+                    <figure className="my-12">
+                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', paddingBottom: '56.25%' }}>
                         <iframe
                           src={url.toString()}
                           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '110%' }}
@@ -183,15 +183,15 @@ export default async function ProjectPage({ params }: Props) {
                         />
                       </div>
                       {value?.caption && (
-                        <figcaption className="text-sm text-muted mt-3 px-6">{value.caption}</figcaption>
+                        <figcaption className="text-sm text-muted mt-3">{value.caption}</figcaption>
                       )}
                     </figure>
                   )
                 },
                 image: ({ value }) => (
-                  <figure className="my-12" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
+                  <figure className="my-12">
                     {value?.asset?.url && (
-                      <div className="rounded-2xl overflow-hidden">
+                      <div className="rounded-2xl overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
                         <Image
                           src={value.asset.url}
                           alt={value.alt || ''}
@@ -202,7 +202,7 @@ export default async function ProjectPage({ params }: Props) {
                       </div>
                     )}
                     {value?.caption && (
-                      <figcaption className="text-sm text-muted mt-3 px-6">
+                      <figcaption className="text-sm text-muted mt-3">
                         {value.caption}
                       </figcaption>
                     )}
