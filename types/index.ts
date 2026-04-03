@@ -24,7 +24,6 @@ export interface Project {
   cardImage?: SanityImage
   coverImage: SanityImage
   externalLink?: string
-  customPath?: string
 }
 
 export interface StoreLink {
@@ -53,4 +52,12 @@ export interface SideProject {
   tags?: string[]
   link?: string
   body?: Array<{ _type: string; [key: string]: unknown }>
+}
+
+export interface SideProjectsPage {
+  _id: string
+  cardTitle: string
+  cardDescription?: string
+  cardImage?: SanityImage
+  cardOrder?: number
 }

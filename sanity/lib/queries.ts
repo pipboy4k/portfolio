@@ -17,8 +17,7 @@ export const getAllProjectsQuery = groq`
     coverImage {
       asset->,
       alt
-    },
-    customPath
+    }
   }
 `
 
@@ -57,6 +56,19 @@ export const getProjectBySlugQuery = groq`
 
 export const getAllProjectSlugsQuery = groq`
   *[_type == "project"] { "slug": slug.current }
+`
+
+export const getSideProjectsPageQuery = groq`
+  *[_type == "sideProjectsPage"][0] {
+    _id,
+    cardTitle,
+    cardDescription,
+    cardOrder,
+    cardImage {
+      asset->,
+      alt
+    }
+  }
 `
 
 export const getAllSideProjectsQuery = groq`
