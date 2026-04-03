@@ -144,7 +144,6 @@ export default defineType({
           type: 'string',
         }),
       ],
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'summary',
@@ -152,7 +151,7 @@ export default defineType({
       type: 'text',
       rows: 3,
       description: 'Short description shown on the project card.',
-      validation: (Rule) => Rule.required().max(300),
+      validation: (Rule) => Rule.max(300),
     }),
     defineField({
       name: 'body',
