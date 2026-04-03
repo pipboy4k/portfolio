@@ -17,6 +17,7 @@ export interface Project {
   _id: string
   title: string
   slug: { current: string }
+  order?: number
   year?: string
   tags?: string[]
   summary: string
