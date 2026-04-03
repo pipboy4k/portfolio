@@ -12,6 +12,40 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   const role = tags?.[0]
   const description = cardDescription || summary
   const href = customPath || `/projects/${slug.current}`
+  const isDark = !!customPath
+
+  if (isDark) {
+    return (
+      <Link
+        href={href}
+        className="group block rounded-2xl overflow-hidden bg-background transition-all duration-300"
+      >
+        {/* Dark image container */}
+        <div className="bg-[#0a0a0a] rounded-2xl overflow-hidden">
+          {previewImage?.asset?.url ? (
+            <Image
+              src={previewImage.asset.url}
+              alt={previewImage.alt || title}
+              width={previewImage.asset.metadata?.dimensions?.width || 960}
+              height={previewImage.asset.metadata?.dimensions?.height || 600}
+              className="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.03]"
+            />
+          ) : (
+            <div className="h-48 flex items-center justify-center">
+              <span className="text-[#444] text-sm">→</span>
+            </div>
+          )}
+        </div>
+
+        {/* Text */}
+        <div className="py-5">
+          <p className="text-base font-bold text-foreground">{title}</p>
+          {role && <p className="text-base text-muted mt-1">{role}</p>}
+          {description && <p className="text-base text-subtle leading-[1.6] mt-1">{description}</p>}
+        </div>
+      </Link>
+    )
+  }
 
   return (
     <Link
@@ -31,7 +65,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         </div>
       )}
 
-      {/* Text on white background */}
+      {/* Text */}
       <div className="py-5">
         <p className="text-base font-bold text-foreground">{title}</p>
         {role && <p className="text-base text-muted mt-1">{role}</p>}
