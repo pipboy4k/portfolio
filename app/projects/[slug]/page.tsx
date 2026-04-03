@@ -28,7 +28,7 @@ export default async function ProjectPage({ params }: Props) {
 
   if (!project) notFound()
 
-  const { title, year, tags, summary, coverImage, body, gallery, externalLink, storeLinks, metadata } = project
+  const { title, year, tags, summary, coverImage, body, storeLinks, metadata } = project
 
   return (
     <main className="max-w-[768px] mx-auto px-6 py-16">
@@ -109,16 +109,6 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         )}
 
-        {externalLink && !storeLinks?.length && (
-          <a
-            href={externalLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 mt-5 text-sm text-foreground underline underline-offset-2 hover:text-subtle transition-colors"
-          >
-            View live project ↗
-          </a>
-        )}
       </header>
 
       {/* Cover image — 1152px centered, responsive */}
@@ -222,25 +212,6 @@ export default async function ProjectPage({ params }: Props) {
             }}
           />
         </div>
-      )}
-
-      {/* Gallery — single column, no heading */}
-      {gallery && gallery.length > 0 && (
-        <section className="mb-20 flex flex-col gap-4" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))' }}>
-          {gallery.map((image, i) => (
-            image?.asset?.url && (
-              <div key={i} className="rounded-2xl overflow-hidden">
-                <Image
-                  src={image.asset.url}
-                  alt={image.alt || `Gallery image ${i + 1}`}
-                  width={image.asset.metadata?.dimensions?.width || 800}
-                  height={image.asset.metadata?.dimensions?.height || 600}
-                  className="w-full h-auto block"
-                />
-              </div>
-            )
-          ))}
-        </section>
       )}
 
       {/* Footer nav */}

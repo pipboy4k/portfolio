@@ -39,7 +39,6 @@ export interface MetadataItem {
 
 export interface ProjectDetail extends Project {
   body?: Array<{ _type: string; [key: string]: unknown }>
-  gallery?: SanityImage[]
   storeLinks?: StoreLink[]
   metadata?: MetadataItem[]
 }

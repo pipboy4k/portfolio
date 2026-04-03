@@ -244,30 +244,6 @@ export default defineType({
         },
       ],
     }),
-    defineField({
-      name: 'gallery',
-      title: 'Gallery',
-      type: 'array',
-      of: [
-        {
-          type: 'image',
-          options: { hotspot: true },
-          fields: [
-            defineField({
-              name: 'alt',
-              title: 'Alt Text',
-              type: 'string',
-            }),
-          ],
-        },
-      ],
-    }),
-    defineField({
-      name: 'externalLink',
-      title: 'External Link',
-      type: 'url',
-      description: 'Optional: link to the live project or prototype.',
-    }),
   ],
   orderings: [
     {

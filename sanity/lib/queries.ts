@@ -29,7 +29,6 @@ export const getProjectBySlugQuery = groq`
     year,
     tags,
     summary,
-    externalLink,
     coverImage {
       asset->,
       alt
@@ -47,10 +46,6 @@ export const getProjectBySlugQuery = groq`
         file { asset-> }
       }
     },
-    gallery[] {
-      asset->,
-      alt
-    }
   }
 `
 
