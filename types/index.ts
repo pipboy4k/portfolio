@@ -43,3 +43,13 @@ export interface ProjectDetail extends Project {
   storeLinks?: StoreLink[]
   metadata?: MetadataItem[]
 }
+
+export interface SideProject {
+  _id: string
+  title: string
+  slug: { current: string }
+  order?: number
+  tags?: string[]
+  link?: string
+  body?: Array<{ _type: string; [key: string]: unknown }>
+}

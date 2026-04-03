@@ -57,3 +57,25 @@ export const getProjectBySlugQuery = groq`
 export const getAllProjectSlugsQuery = groq`
   *[_type == "project"] { "slug": slug.current }
 `
+
+export const getAllSideProjectsQuery = groq`
+  *[_type == "sideProject"] | order(order asc) {
+    _id,
+    title,
+    slug,
+    order,
+    tags,
+    link,
+    body[] {
+      ...,
+      _type == "image" => {
+        ...,
+        asset->
+      },
+      _type == "videoFile" => {
+        ...,
+        file { asset-> }
+      }
+    }
+  }
+`
