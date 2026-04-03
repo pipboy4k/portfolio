@@ -55,7 +55,7 @@ export default async function SideProjectsPage() {
                   videoFile: ({ value }) => (
                     <figure className="my-10">
                       {value?.file?.asset?.url && (
-                        <div className="rounded-2xl overflow-hidden">
+                        <div className="rounded-2xl overflow-hidden" style={{ backgroundColor: value.backgroundColor || undefined }}>
                           <video
                             src={value.file.asset.url}
                             autoPlay

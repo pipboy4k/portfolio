@@ -91,6 +91,12 @@ export default defineType({
               validation: (Rule) => Rule.required(),
             }),
             defineField({
+              name: 'backgroundColor',
+              title: 'Frame Background Color',
+              type: 'string',
+              description: 'Optional: CSS color for the video frame (e.g. #f5f5f5, #0a0a0a). Leave blank for transparent.',
+            }),
+            defineField({
               name: 'caption',
               title: 'Caption',
               type: 'string',
