@@ -4,8 +4,6 @@ export default defineType({
   name: 'sideProject',
   title: 'Side Project',
   type: 'document',
-  // Singleton: only one document should exist
-  __experimental_actions: ['update', 'publish'],
   fields: [
     defineField({
       name: 'title',
