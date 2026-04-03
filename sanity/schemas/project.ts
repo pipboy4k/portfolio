@@ -32,6 +32,7 @@ export default defineType({
       title: 'Year',
       type: 'string',
       description: 'e.g. 2025 or 2020 — 2023',
+      hidden: ({ document }) => !!document?.customPath,
     }),
     defineField({
       name: 'cardDescription',
@@ -68,6 +69,7 @@ export default defineType({
       title: 'Store Links',
       type: 'array',
       description: 'Add App Store, Google Play, or web links.',
+      hidden: ({ document }) => !!document?.customPath,
       of: [
         {
           type: 'object',
@@ -108,6 +110,7 @@ export default defineType({
       title: 'Project Metadata',
       type: 'array',
       description: 'Key details shown under the cover image (e.g. My role, Team, Timeline, Platform)',
+      hidden: ({ document }) => !!document?.customPath,
       of: [
         {
           type: 'object',
@@ -137,6 +140,7 @@ export default defineType({
       title: 'Cover Image',
       type: 'image',
       options: { hotspot: true },
+      hidden: ({ document }) => !!document?.customPath,
       fields: [
         defineField({
           name: 'alt',
@@ -151,12 +155,14 @@ export default defineType({
       type: 'text',
       rows: 3,
       description: 'Short description shown on the project card.',
+      hidden: ({ document }) => !!document?.customPath,
       validation: (Rule) => Rule.max(300),
     }),
     defineField({
       name: 'body',
       title: 'Case Study',
       type: 'array',
+      hidden: ({ document }) => !!document?.customPath,
       of: [
         {
           type: 'block',
@@ -247,6 +253,7 @@ export default defineType({
       name: 'gallery',
       title: 'Gallery',
       type: 'array',
+      hidden: ({ document }) => !!document?.customPath,
       of: [
         {
           type: 'image',
@@ -272,6 +279,7 @@ export default defineType({
       title: 'External Link',
       type: 'url',
       description: 'Optional: link to the live project or prototype.',
+      hidden: ({ document }) => !!document?.customPath,
     }),
   ],
   orderings: [
