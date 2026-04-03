@@ -147,7 +147,7 @@ export default async function ProjectPage({ params }: Props) {
                 videoFile: ({ value }) => (
                   <figure className="my-12">
                     {value?.file?.asset?.url && (
-                      <div className="overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '24px' }}>
+                      <div className="overflow-hidden" style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '24px', paddingTop: '32px', paddingBottom: '32px' }}>
                         <video
                           src={value.file.asset.url}
                           autoPlay
