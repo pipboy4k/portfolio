@@ -147,8 +147,8 @@ export default async function ProjectPage({ params }: Props) {
                 videoFile: ({ value }) => (
                   <figure className="my-12">
                     {value?.file?.asset?.url && (
-                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '32px', paddingTop: '32px', paddingBottom: '32px', display: 'flex', justifyContent: 'center' }}>
-                        <div style={{ borderRadius: '32px', overflow: 'hidden', display: 'inline-block', lineHeight: 0 }}>
+                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: '16px', paddingTop: '32px', paddingBottom: '32px', display: 'flex', justifyContent: 'center' }}>
+                        <div style={{ borderRadius: '16px', overflow: 'hidden', display: 'inline-block', lineHeight: 0 }}>
                           <video
                             src={value.file.asset.url}
                             autoPlay
@@ -192,7 +192,7 @@ export default async function ProjectPage({ params }: Props) {
                 image: ({ value }) => (
                   <figure className="my-12">
                     {value?.asset?.url && (
-                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: value.backgroundColor ? '24px' : undefined, padding: value.backgroundColor ? '32px' : undefined, display: value.backgroundColor ? 'flex' : undefined, justifyContent: value.backgroundColor ? 'center' : undefined }}>
+                      <div style={{ position: 'relative', left: '50%', transform: 'translateX(-50%)', width: 'min(1024px, calc(100vw - 32px))', backgroundColor: value.backgroundColor || undefined, borderRadius: value.backgroundColor ? '16px' : undefined, padding: value.backgroundColor ? '32px' : undefined, display: value.backgroundColor ? 'flex' : undefined, justifyContent: value.backgroundColor ? 'center' : undefined }}>
                         <div style={{ borderRadius: '16px', overflow: 'hidden', lineHeight: 0, width: value.backgroundColor ? 'auto' : '100%' }}>
                           <Image
                             src={value.asset.url}
