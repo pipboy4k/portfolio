@@ -9,7 +9,7 @@ export default function HeroIntro() {
         </div>
         <nav className="flex items-center gap-8">
           <a href="https://www.linkedin.com/in/ikoch/" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted underline decoration-divider underline-offset-2 hover:text-foreground hover:decoration-foreground transition-colors">Linkedin</a>
-          <a href="https://drive.google.com/file/d/16lJFshxH1muM8HP2d-np4kzQLo9QL0VO/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted underline decoration-divider underline-offset-2 hover:text-foreground hover:decoration-foreground transition-colors">CV</a>
+          <a href="https://drive.google.com/file/d/1giqkhbf_SkkUrd7sGWvJnmjIPBNxeBph/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-sm font-medium text-muted underline decoration-divider underline-offset-2 hover:text-foreground hover:decoration-foreground transition-colors">CV</a>
           <a href="mailto:ihor.kochetov@gmail.com" className="text-sm font-medium text-muted underline decoration-divider underline-offset-2 hover:text-foreground hover:decoration-foreground transition-colors">Email</a>
         </nav>
       </header>
